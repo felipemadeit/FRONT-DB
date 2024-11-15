@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
     margin: 0;
     padding: 0;
@@ -24,66 +26,88 @@ header {
 }
 
 .main-title {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    top: 50px;
-    width: 43ch;
-    height: 40px;
-    font-family: "Doto";
-    font-size: 30px;
     color: white;
-    margin: 50px;
-    white-space: nowrap;
-    border-right: 4px solid;
-    animation: typing 4s steps(43),
-    blink .5s infinite step-end alternate;
+    font-size: 40px;
+    margin: 25px;
+    animation: typing 4s steps(42), blink .5s infinite step-end alternate;
     overflow: hidden;
-    flex-direction: column;
+    white-space: nowrap;
+    border-right: 3px solid;
+    padding: 15px;
+    width: 40ch;
+    font-family: "Doto";
+    text-shadow: 0 0 5px #000000,
+                 0 0 10px #ffffff,
+                 0 0 40px #ffffff,
+                 0 0 60px #ffffff;
 }
 
 @keyframes typing {
-    from { width: 0;}
+    from { width: 0px; }
 }
 
 @keyframes blink {
-    50% { border-color: transparent;}
+    50% { border-color: transparent; }
 }
 
-div.main-conteiner {
+.main-container {
+    position: relative;
     display: flex;
     background-color: white;
     height: 700px;
     width: 1100px;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     border-radius: 20px;
     margin: 20px;
 }
 
-i {
-    color: blue;
+.icons {
+    position: absolute;
+    top: 6px;
+    right: 25px;
+    display: flex;
+    gap: 25px;
 }
 
 .icon {
-    height: 80px;
-    width: 80px;
-}
-
-.main-window {
-    justify-items: baseline;
-    align-content: baseline;
+    font-size: 30px;
+    color: black;
 }
 
 .main-window {
     background-color: rgb(0, 0, 0);
     height: 600px;
     width: 1050px;
-    justify-content: center;
-    align-items: center;
     border-radius: 20px;
     display: flex;
-    margin: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-button-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    width: 300px;
+    height: 55px;
+    text-wrap: wrap;
+    margin: 10px;
+    transition: .5s;
+}
+
+.wrapper-button-login:hover {
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 255, 255, .5);
+    transition: .4s;
+}
+
+#button-login {   
+    color: black;
+    font-size: 20px;
+    font-family: "Press Start 2P", system-ui;
 }
 
 .moved-header {
@@ -108,10 +132,8 @@ i {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: black;
 }
 
@@ -122,7 +144,6 @@ i {
     flex-direction: column;
     width: 400px;
     height: 400px;
-
 }
 
 input {
@@ -141,7 +162,13 @@ input:focus {
     border: 2px solid red;
 }
 
-
+.button-login-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
 
 #button-submit-login {
     width: 250px;
@@ -150,6 +177,7 @@ input:focus {
     border-radius: 10px;
     cursor: pointer;
     background-color: white;
+    margin: auto;
 }
 
 #wrapper-input-username {
@@ -192,12 +220,19 @@ input:focus {
     font-size: 20px;
 }
 
+.wrapper-spacer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
 #spacer-login {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    margin-top: 250px;
+    position: static;
     width: 250px;
     height: 10px;
     color: white;
@@ -206,7 +241,7 @@ input:focus {
 #wrapper-button-register {
     display: flex;
     position: absolute;
-    margin-top: 350px;
+    margin-top: 300px;
     width: 250px;
     height: auto;
 }
@@ -370,3 +405,161 @@ input:focus {
     justify-content: center;
     align-items: center;
 }
+
+/* From Uiverse.io by 0xnihilism */ 
+.button-container {
+    display: flex;
+    justify-content: left;
+    padding: 20px;
+
+  }
+  
+  .brutalist-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #000000;
+    border-radius: 12px;
+    padding: 0;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    position: relative;
+    box-shadow: 4px 4px 0px #000000;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 90px;
+    width: 90px;
+    cursor: pointer;
+  }
+  
+  .brutalist-button.store {
+    background-color: #959695;
+  }
+  
+  .brutalist-button::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -150%;
+    width: 300%;
+    height: 300%;
+    border-radius: 50%;
+    transform: translateX(-50%) scale(0);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 1;
+  }
+  
+  .brutalist-button.store::before {
+    background-color: #ffffff;
+  }
+  
+  .brutalist-button.claude::before {
+    background-color: #e3d19c;
+  }
+  
+  .brutalist-button:hover::before {
+    transform: translateX(-50%) scale(1);
+  }
+  
+  .brutalist-button:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0px #000000;
+  }
+  
+  .brutalist-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000000;
+  }
+  
+  .store-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .store-logo {
+    align-items: center;
+    justify-content: center;
+    background-color: #4e4f5c;
+    border-radius: 50%;
+  }
+  
+  .store-icon {
+    width: 35px;
+    height: 35px;
+    fill: #ffffff; /* White color for the SVG */
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  
+  .brutalist-button:hover .store-logo {
+    animation: spin 5s linear infinite;
+    width: 40px;
+    height: 40px;
+    top: 35%;
+  }
+  
+  .brutalist-button:hover .store-icon {
+    transform: scale(0.6);
+  }
+  
+  .button-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.3;
+    transition: all 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    z-index: 2;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+  }
+  
+  .button-text span {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #000000;
+  }
+  
+  .brutalist-button:hover .button-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .brutalist-button.store:hover .button-text {
+    color: #000000;
+  }
+  
+  @media (hover: hover) and (pointer: fine) {
+    .brutalist-button:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: 8px 8px 0px #000000;
+    }
+  }
+  
